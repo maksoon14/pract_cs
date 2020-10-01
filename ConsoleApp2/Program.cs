@@ -29,7 +29,7 @@ namespace ConsoleApp2
         {
 
             Person p = new Person("Tony", "Allen", 32, Person.Genders.Male);
-            Console.WriteLine(p);
+            Console.WriteLine(p.ToString());
         }
     }
 }
