@@ -16,7 +16,7 @@ namespace pr_02_03_01
             while (theByte != -1)
             {
                 compStream.WriteByte((byte)theByte); 
-                theByte = sourceFile. ReadByte();
+                theByte = sourceFile.ReadByte();
             }
             compStream.Close();
             sourceFile.Close();
