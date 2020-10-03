@@ -5,11 +5,11 @@ using System.Runtime.Serialization;
 namespace pr_05_01
 {
     [Serializable]
-    public class Person
+    class Person : IDeserializationCallback
     {
         public string name;
         public DateTime dateOfBirth;
-        public int age;
+        [NonSerialized] public int age;
 
         public Person(string _name, DateTime _dateOfBirth)
         {
@@ -37,6 +37,12 @@ namespace pr_05_01
             {
                 age--;
             }
+            
+        }
+        void IDeserializationCallback.OnDeserialization(Object sender) 
+        {
+            // После десериализации вычисляем возраст 
+            CalculateAge();
         }
     }
 }

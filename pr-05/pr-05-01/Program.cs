@@ -56,15 +56,15 @@ namespace pr_05_01
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(fs, sp);
             fs.Close();
-            Console.WriteLine("I work");
         }
 
         private static Person Deserialize()
         {
             Person dsp = new Person();
-
-           
-
+            FileStream fs = new FileStream("Person.dat", FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
+            dsp = (Person) bf.Deserialize(fs);
+            fs.Close();
             return dsp;
         }
     }
