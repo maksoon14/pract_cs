@@ -76,7 +76,7 @@ namespace pr_06_var1
             return firstname.ToString() + " " + lastname.ToString() + " " + date.ToString("dd/MM/yyyy");
         }
 
-        public virtual string ToShortString()
+        public string ToShortString()
         {
             return firstname.ToString() + " " + lastname.ToString();
         }
